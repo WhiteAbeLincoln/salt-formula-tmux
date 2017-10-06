@@ -3,7 +3,8 @@
 {% set os_family_map = salt['grains.filter_by']({
     'Debian': {
         'conf_file': '/etc/tmux.conf',
-    }
+    },
+    'default': {}
 }, grain="os_family", merge=salt['pillar.get']('tmux:lookup')) %}
 
 {% do default_settings.tmux.update(os_family_map) %}
