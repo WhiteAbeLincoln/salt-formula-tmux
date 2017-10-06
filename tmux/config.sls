@@ -13,7 +13,7 @@ include:
     - mode: {{ user.get('config_mode', tmux.config_mode) }}
 {% endfor %}
 
-{% tmux.managed_config %}
+{% if tmux.managed_config %}
 tmux config:
   file.managed:
     - name: {{ tmux.config_file }}
