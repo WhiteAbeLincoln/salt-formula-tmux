@@ -2,4 +2,4 @@
 
 install tmux:
   pkg.installed:
-    - pkgs: tmux.pkgs
+    - pkgs: {{ tmux.pkgs }}
