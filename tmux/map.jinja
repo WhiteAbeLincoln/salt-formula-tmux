@@ -1,0 +1,11 @@
+{% import_yaml "tmux/defaults.yaml" as default_settings %}
+
+{% set os_family_map = salt['grains.filter_by']({
+    'Debian': {
+        'conf_file': '/etc/tmux.conf',
+    }
+}, grain="os_family", merge=salt['pillar.get']('tmux:lookup')) %}
+
+{% do default_settings.tmux.update(os_family_map) %}
+
+{% set tmux = salt['pillar.get']('tmux', default=default_settings.tmux, merge=True) %}

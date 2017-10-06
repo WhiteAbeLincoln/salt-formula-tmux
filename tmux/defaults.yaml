@@ -1,0 +1,10 @@
+tmux:
+  pkgs:
+    - tmux
+  config_file: /etc/tmux.conf
+  config_src: salt://tmux/files/tmux.conf
+  config_user: root
+  config_group: root
+  config_mode: '644'
+  managed_config: True
+  users: {}

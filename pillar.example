@@ -1,0 +1,16 @@
+tmux:
+  pkgs:
+    - tmux
+    - some_other_package
+  config_file: /etc/tmux.conf
+  config_src: salt://files/global.tmux.conf
+  config_user: root
+  config_group: root
+  config_mode: '644'
+  users:
+    example:
+      config_file: /home/examples/.tmux.conf
+      config_src: salt://files/example.tmux.conf
+      config_user: example
+      config_group: www
+      config_mode: '640'
